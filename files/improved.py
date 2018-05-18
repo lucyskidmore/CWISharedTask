@@ -187,7 +187,7 @@ class Improved(object):
             X.append(self.extract_features(sent['target_word']))
             y.append(sent['gold_label'])
         
-        self.model4.fit(X, y)
+        self.vote.fit(X, y)
 
 
     def test(self, testset):
@@ -195,7 +195,7 @@ class Improved(object):
         for sent in testset:
             X.append(self.extract_features(sent['target_word']))
         
-        return self.model4.predict(X)
+        return self.vote.predict(X)
 
 
 
